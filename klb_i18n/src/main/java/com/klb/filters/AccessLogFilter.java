@@ -24,22 +24,22 @@ public class AccessLogFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
-    HttpServletResponse httpResponse = (HttpServletResponse) response;
+        HttpServletResponse httpResponse = (HttpServletResponse) response;
 
-    long startTime = System.currentTimeMillis();
+        long startTime = System.currentTimeMillis();
 
-    // Ghi lại thông tin truy cập trước khi xử lý request
-    chain.doFilter(request, response);
+        // Ghi lại thông tin truy cập trước khi xử lý request
+        chain.doFilter(request, response);
 
-    long duration = System.currentTimeMillis() - startTime;
+        long duration = System.currentTimeMillis() - startTime;
 
-    // Ghi lại thông tin truy cập sau khi xử lý request
-    accessLogger.info("{} {} {} {} {}ms",
-            httpRequest.getRemoteAddr(),
-            httpRequest.getMethod(),
-            httpRequest.getRequestURI(),
-            httpResponse.getStatus(),
-            duration);
+        // Ghi lại thông tin truy cập sau khi xử lý request
+        accessLogger.info("{} {} {} {} {}ms",
+                httpRequest.getRemoteAddr(),
+                httpRequest.getMethod(),
+                httpRequest.getRequestURI(),
+                httpResponse.getStatus(),
+                duration);
     }
 
     @Override
