@@ -1,4 +1,4 @@
-package com.KLB;
+package com.klb;
 
 import java.util.Locale;
 

@@ -1,4 +1,4 @@
-package com.KLB;
+package com.klb;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
