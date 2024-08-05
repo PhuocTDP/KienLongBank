@@ -1,4 +1,4 @@
-package com.KLB.Controller;
+package com.klb.controllers;
 
 import java.util.Locale;
 
